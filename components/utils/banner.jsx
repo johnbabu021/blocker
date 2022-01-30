@@ -1,8 +1,19 @@
 import Link from "next/link";
 import PlayArrowOutlinedIcon from '@mui/icons-material/PlayArrowOutlined';
+import { useContext } from "react";
+import { MainContext } from "../../helpers/global/context";
+import { WalletData } from "../core/walletData";
+// import Wallet from "./wallets";
 export  default function    Banner(){
+
+const   {state:{wallet},dispatch}=useContext(MainContext)
     return (
         <div    className="h-[90vh]  grid place-items-center font-bold ">
+
+{/* <WalletData/> */}
+
+            {/* {wallet&&(
+            )} */}
 <div    className="flex justify-center gap-10">
 
 
@@ -57,14 +68,16 @@ rounded-2xl
 grid
 place-items-center">
 <section
-className="shadow-md
+className="
+shadow-md
 bg-white
 rounded-full
+shadow-gray-500
 p-4
 grid
 place-items-center
 text-gray-500
-active:scale-90
+active:scale-75
 hover:text-blue-500
 ease-in
 duration-300
@@ -72,6 +85,8 @@ border-2
 border-transparent
 cursor-pointer
 hover:border-blue-400
+hover:shadow-2xl
+hover:shadow-gray-500
 ">
 <PlayArrowOutlinedIcon/>
 
